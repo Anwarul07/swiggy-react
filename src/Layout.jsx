@@ -1,20 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { HederComponent } from "./Header";
+import { Header } from "./Header";
 import { Body } from "./Body";
 import { Footer } from "./Footer";
 import { createBrowserRouter, Router, RouterProvider } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import { ErrorPage } from "./Error";
+import { ErrorPage } from "./ErrorPage";
 import { Outlet } from "react-router-dom";
-import { Contact } from "./ContactUs";
-import { RestaurantCard } from "./Cartt";
-import { RestaurantsMennu } from "./RestaurantMenu";
-import { Profile, ProfileFunc } from "./Profile";
+import { ContactUs } from "./ContactUs";
+import { RestaurantCard } from "./RestaurantCard";
+import { RestaurantsMennu } from "./RestaurantsMennu";
+import { ProfileFunc} from "./ProfileFunc";
 import { Shimmer } from "./Shimmer";
 import { About } from "./About";
 import "./Food.css";
-import {Instamart} from "./Instamart";
+// import { Instamart } from "./Instamart";
 
 //Chunking
 //Code Splitting
@@ -23,14 +23,15 @@ import {Instamart} from "./Instamart";
 //On demand load
 //Dynamic Bundling
 
-// const Instamart = lazy(() => import("./Instamart"));
+const Instamart = lazy(() => import('./Instamart'));
+
 
 //Upon on demand loading ->upon render->react will suspend the loading
 
 const Layout = () => {
   return (
     <>
-      <HederComponent />
+      <Header />
       <Outlet />
       <Footer />
     </>
@@ -53,13 +54,14 @@ const appRouter = createBrowserRouter([
         children: [
           {
             path: "profile", //this  will also work but / assumes origin from after local host other wise children
-            element: <ProfileFunc />,
+            element:<Body/>
+            
           },
         ],
       },
       {
         path: "contactus", //this  will also work but / assumes origin from after local host
-        element: <Contact />,
+        element: <ContactUs />,
       },
       {
         path: "/Body",
@@ -73,9 +75,9 @@ const appRouter = createBrowserRouter([
         path: "/restaurant/:id",
         element: <RestaurantsMennu />,
       },
-      {
-        path: "/Instamart",
-        element:<Instamart />,
+     {
+          path:"instamart",
+          element: <Suspense fallback={<Shimmer/>}><Instamart/></Suspense>
       },
     ],
   },

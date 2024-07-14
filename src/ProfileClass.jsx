@@ -1,6 +1,6 @@
 import React from "react";
 
-export class ProfileC extends React.Component {
+export class ProfileClass extends React.Component {
   constructor(props) {
     super(props);
     // this.state = {

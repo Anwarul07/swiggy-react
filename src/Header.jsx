@@ -16,7 +16,7 @@ export const Title = () => (
   </a>
 );
 
-export const HederComponent = () => {
+export const Header = () => {
   const [isLogin, setIsLogin] = useState(false);
   return (
     <div className="header flex justify-around bg-indigo-600 h-20 text-zinc-50 shadow-md shadow-neutral-900">

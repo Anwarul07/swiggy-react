@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { RestaurantCard } from "./Cartt";
+import { RestaurantCard } from "./RestaurantCard";
 import { restaurantList } from "./Api";
 import { Cloudimg } from "./Api";
 import { Shimmer } from "./Shimmer";
@@ -36,7 +36,7 @@ export const Body = () => {
   console.log("render console");
 
   // if (!allRestaurants) return null;
-  //  if(filteredRestaurants?.length ===0 ) return <h3>No Items matched</h3>
+    // if(filteredRestaurants?.length ===0 ) return <h3>No Items matched</h3>
 
 
   const isOnline= useOnline();

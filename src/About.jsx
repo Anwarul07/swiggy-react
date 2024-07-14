@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import { ProfileFunc } from "./Profile";
-import { ProfileC } from "./ProfileClass";
+import { ProfileFunc } from "./ProfileFunc";
+import { ProfileClass } from "./ProfileClass";
 import "./Food.css";
 
 export const About = () => {
@@ -13,7 +13,7 @@ export const About = () => {
         <h5>This is a food delivery app to order food online 👍✌️ </h5>
         <br />
       </div>
-      <ProfileC  name={"anwar class"}/>
+      <ProfileClass  name={"anwar class"}/>
     </div>
   );
 };

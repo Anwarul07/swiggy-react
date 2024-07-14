@@ -1,4 +1,4 @@
-export const Contact = () => {
+export const ContactUs = () => {
   return (
   <div className="h-80 bg-green-300 text-center my-12 capitalize">
       <h4 className="pt-16"> contact Us</h4>
