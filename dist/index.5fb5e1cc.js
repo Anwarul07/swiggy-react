@@ -37190,7 +37190,7 @@ var _useRestaurant = require("./utilty.jsx/useRestaurant");
 var _s = $RefreshSig$();
 const RestaurantsMennu = ()=>{
     _s();
-    const [restaurant, setRestaurant] = (0, _react.useState)([]);
+    const [restaurants, setRestaurants] = (0, _react.useState)([]);
     const parammeter = (0, _reactRouterDom.useParams)();
     const { id } = parammeter;
     console.log(" Host id is " + id);
@@ -37203,99 +37203,95 @@ const RestaurantsMennu = ()=>{
         const data = await fetch((0, _api.FoodFire_Url));
         const json = await data.json();
         console.log(json);
-        setRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
-    return !restaurant ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmer.Shimmer), {}, void 0, false, {
+    console.log(restaurants);
+    const data = restaurants.map((food)=>food.info).find((food)=>food.id === id);
+    console.log("data is :", data);
+    return !restaurants ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmer.Shimmer), {}, void 0, false, {
         fileName: "src/RestaurantsMennu.jsx",
-        lineNumber: 28,
-        columnNumber: 24
+        lineNumber: 31,
+        columnNumber: 25
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "menu",
+        className: "m-2 border-slate-600 border-2 w-60 bg-slate-300 h-[500px] justify-center  shadow-neutral-950 shadow-lg",
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                        children: [
-                            "Restaurants Id : ",
-                            id
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/RestaurantsMennu.jsx",
-                        lineNumber: 30,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                        children: restaurant?.name
-                    }, void 0, false, {
-                        fileName: "src/RestaurantsMennu.jsx",
-                        lineNumber: 31,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                        children: restaurant?.areaName
-                    }, void 0, false, {
-                        fileName: "src/RestaurantsMennu.jsx",
-                        lineNumber: 32,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                        children: restaurant?.amount
-                    }, void 0, false, {
-                        fileName: "src/RestaurantsMennu.jsx",
-                        lineNumber: 33,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                        children: restaurant?.avgRating
-                    }, void 0, false, {
-                        fileName: "src/RestaurantsMennu.jsx",
-                        lineNumber: 34,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                src: (0, _api.Cloudimg) + data?.cloudinaryImageId
+            }, void 0, false, {
                 fileName: "src/RestaurantsMennu.jsx",
-                lineNumber: 29,
+                lineNumber: 32,
                 columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                className: "px-4 font-bold text-lg",
+                children: data?.name
+            }, void 0, false, {
+                fileName: "src/RestaurantsMennu.jsx",
+                lineNumber: 33,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                className: "px-4 font-semibold",
+                children: data?.costForTwo
+            }, void 0, false, {
+                fileName: "src/RestaurantsMennu.jsx",
+                lineNumber: 35,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                className: "px-4 font-medium",
                 children: [
-                    console.log(Object.values(restaurant?.menu?.items)),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                        children: "menu"
-                    }, void 0, false, {
-                        fileName: "src/RestaurantsMennu.jsx",
-                        lineNumber: 38,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                        children: Object.values(restaurant?.menu?.items)?.map((item)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                children: item?.name
-                            }, item.id, false, {
-                                fileName: "src/RestaurantsMennu.jsx",
-                                lineNumber: 40,
-                                columnNumber: 64
-                            }, undefined))
-                    }, void 0, false, {
-                        fileName: "src/RestaurantsMennu.jsx",
-                        lineNumber: 39,
-                        columnNumber: 9
-                    }, undefined)
+                    data?.avgRating,
+                    " Star"
                 ]
             }, void 0, true, {
                 fileName: "src/RestaurantsMennu.jsx",
                 lineNumber: 36,
                 columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                className: "px-4  font-normal",
+                children: data?.areaName
+            }, void 0, false, {
+                fileName: "src/RestaurantsMennu.jsx",
+                lineNumber: 37,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                className: "px-4  font-normal",
+                children: data?.locality
+            }, void 0, false, {
+                fileName: "src/RestaurantsMennu.jsx",
+                lineNumber: 38,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                className: "px-4  font-normal",
+                children: data?.sla?.slaString
+            }, void 0, false, {
+                fileName: "src/RestaurantsMennu.jsx",
+                lineNumber: 39,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                className: "px-4",
+                children: [
+                    "Restaurants Id : ",
+                    id
+                ]
+            }, void 0, true, {
+                fileName: "src/RestaurantsMennu.jsx",
+                lineNumber: 41,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/RestaurantsMennu.jsx",
-        lineNumber: 28,
-        columnNumber: 38
+        lineNumber: 31,
+        columnNumber: 39
     }, undefined);
 };
-_s(RestaurantsMennu, "ot/RHs/fnNRqwRERoeaHw7Fnskk=", false, function() {
+_s(RestaurantsMennu, "YgPKP+lEy2Vso3eOW75O4/ff4FI=", false, function() {
     return [
         (0, _reactRouterDom.useParams)
     ];

@@ -469,6 +469,14 @@ img, video {
   height: 100%;
 }
 
+.h-\[450px\] {
+  height: 450px;
+}
+
+.h-\[500px\] {
+  height: 500px;
+}
+
 .w-16 {
   width: 4rem;
 }
@@ -589,6 +597,11 @@ img, video {
   padding-bottom: 2rem;
 }
 
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .pb-2 {
   padding-bottom: .5rem;
 }
@@ -632,6 +645,10 @@ img, video {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.font-medium {
+  font-weight: 500;
 }
 
 .uppercase {
