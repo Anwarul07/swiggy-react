@@ -10,10 +10,11 @@ import { Outlet } from "react-router-dom";
 import { ContactUs } from "./ContactUs";
 import { RestaurantCard } from "./RestaurantCard";
 import { RestaurantsMennu } from "./RestaurantsMennu";
-import { ProfileFunc} from "./ProfileFunc";
+import { ProfileFunc } from "./ProfileFunc";
 import { Shimmer } from "./Shimmer";
 import { About } from "./About";
 import "./Food.css";
+import { ProfileClass } from "./ProfileClass";
 // import { Instamart } from "./Instamart";
 
 //Chunking
@@ -23,14 +24,14 @@ import "./Food.css";
 //On demand load
 //Dynamic Bundling
 
-const Instamart = lazy(() => import('./Instamart'));
-
+const Instamart = lazy(() => import("./Instamart"));
 
 //Upon on demand loading ->upon render->react will suspend the loading
 
 const Layout = () => {
   return (
     <>
+      <Shimmer />
       <Header />
       <Outlet />
       <Footer />
@@ -54,8 +55,7 @@ const appRouter = createBrowserRouter([
         children: [
           {
             path: "profile", //this  will also work but / assumes origin from after local host other wise children
-            element:<Body/>
-            
+            element: <ProfileFunc />,
           },
         ],
       },
@@ -64,20 +64,32 @@ const appRouter = createBrowserRouter([
         element: <ContactUs />,
       },
       {
-        path: "/Body",
+        path: "/body",
         element: <Body />,
       },
       {
-        path: "/Cartt",
+        path: "/restaurantcard",
         element: <RestaurantCard />,
       },
       {
         path: "/restaurant/:id",
         element: <RestaurantsMennu />,
       },
-     {
-          path:"instamart",
-          element: <Suspense fallback={<Shimmer/>}><Instamart/></Suspense>
+      {
+        path: "/profilefunc",
+        element: <ProfileFunc />,
+      },
+      {
+        path: "/profileclass",
+        element: <ProfileClass />,
+      },
+      {
+        path: "/instamart",
+        element: (
+          <Suspense>
+            <Instamart />
+          </Suspense>
+        ),
       },
     ],
   },

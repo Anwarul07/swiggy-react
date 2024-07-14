@@ -385,6 +385,14 @@ img, video {
   margin-left: 3rem;
 }
 
+.ml-16 {
+  margin-left: 4rem;
+}
+
+.mr-80 {
+  margin-right: 20rem;
+}
+
 .mt-12 {
   margin-top: 3rem;
 }
@@ -574,6 +582,11 @@ img, video {
 .py-7 {
   padding-top: 1.75rem;
   padding-bottom: 1.75rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .pb-2 {

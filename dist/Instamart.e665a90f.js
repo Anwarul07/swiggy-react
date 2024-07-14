@@ -617,23 +617,32 @@ parcelHelpers.export(exports, "Instamart", ()=>Instamart);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const Instamart = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "Instamart Page"
-            }, void 0, false, {
-                fileName: "src/Instamart.jsx",
-                lineNumber: 3,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "100s of components"
-            }, void 0, false, {
-                fileName: "src/Instamart.jsx",
-                lineNumber: 4,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
+        className: "h-80 bg-green-300 text-center my-12 py-8 capitalize",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "mr-80",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                    children: "Instamart Page"
+                }, void 0, false, {
+                    fileName: "src/Instamart.jsx",
+                    lineNumber: 4,
+                    columnNumber: 13
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                    className: " ml-12",
+                    children: "100s of components"
+                }, void 0, false, {
+                    fileName: "src/Instamart.jsx",
+                    lineNumber: 5,
+                    columnNumber: 13
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/Instamart.jsx",
+            lineNumber: 3,
+            columnNumber: 13
+        }, undefined)
+    }, void 0, false, {
         fileName: "src/Instamart.jsx",
         lineNumber: 2,
         columnNumber: 10

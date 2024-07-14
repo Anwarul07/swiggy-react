@@ -6,14 +6,13 @@ import { Shimmer } from "./Shimmer";
 import { useEffect } from "react";
 import { About } from "./About";
 import { Link } from "react-router-dom";
- import { filerData } from "./utilty.jsx/helper";
- import { FoodFire_Url } from "./Api"
- import { useOnline } from "./utilty.jsx/useOnline";
-
-
+import { filerData } from "./utilty.jsx/helper";
+import { FoodFire_Url } from "./Api";
+import { useOnline } from "./utilty.jsx/useOnline";
 
 //Use satate is used to create  local varible
 export const Body = () => {
+  
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState();
@@ -36,14 +35,12 @@ export const Body = () => {
   console.log("render console");
 
   // if (!allRestaurants) return null;
-    // if(filteredRestaurants?.length ===0 ) return <h3>No Items matched</h3>
+  // if(filteredRestaurants?.length ===0 ) return <h3>No Items matched</h3>
 
-
-  const isOnline= useOnline();
-  if(!isOnline){
-    return <h1>Sorry please check internet </h1>
+  const isOnline = useOnline();
+  if (!isOnline) {
+    return <h1>Sorry please check internet </h1>;
   }
-
   return allRestaurants?.length === 0 ? (
     <Shimmer />
   ) : (
@@ -74,10 +71,11 @@ export const Body = () => {
       <div className="cart flex flex-wrap justify-center my-8">
         {filteredRestaurants.map((restaurant) => {
           return (
-            <Link to={"/restaurant/" + restaurant.info.id}
+            <Link
+              to={"/restaurant/" + restaurant.info.id}
               key={restaurant.info.id}
             >
-              <RestaurantCard {...restaurant.info}  />
+              <RestaurantCard {...restaurant.info} />
             </Link>
           );
         })}
