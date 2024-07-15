@@ -32,9 +32,6 @@ export const Header = () => {
           <Link to="/contactus">
             <li>Contact Us</li>
           </Link>
-          <Link to="/restaurantcard">
-            <li>Cart</li>
-          </Link>
           <Link to="/instamart">
             <li>Instamart</li>
           </Link>
