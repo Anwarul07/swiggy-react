@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import { Header } from "./Header";
 import { Body } from "./Body";
@@ -15,6 +15,11 @@ import { Shimmer } from "./Shimmer";
 import { About } from "./About";
 import "./Food.css";
 import { ProfileClass } from "./ProfileClass";
+import { Provider } from "react-router-dom";
+import { useState } from "react";
+import UserContext from "./userContext";
+
+
 // import { Instamart } from "./Instamart";
 
 //Chunking
@@ -29,15 +34,28 @@ const Instamart = lazy(() => import("./Instamart"));
 //Upon on demand loading ->upon render->react will suspend the loading
 
 const Layout = () => {
-  //
 
+  const [user, setUser] = useState({
+    name: "Anwarul Haue",
+    email: "support@namastereact.com",
+  });
   return (
-    <div>
+
+    // <Provider store={store}>
+    //   <UserContext.Provider
+    //     value={{
+    //       user: user,
+    //       setUser: setUser,
+    //     }}
+    //   >
+
+    //   </UserContext.Provider>
+    <>
       <Shimmer />
       <Header />
       <Outlet />
       <Footer />
-    </div>
+    </>
   );
 };
 
