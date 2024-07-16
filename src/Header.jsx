@@ -18,6 +18,9 @@ export const Title = () => (
 
 export const Header = () => {
   const [isLogin, setIsLogin] = useState(false);
+  // const { user } = useContext(UserContext);
+  
+
   return (
     <div className="header flex justify-around bg-indigo-600 h-20 text-zinc-50 shadow-md shadow-neutral-900">
       <Title />
@@ -37,6 +40,7 @@ export const Header = () => {
           </Link>
         </ul>
       </div>
+      {/* <span className="p-10 font-bold text-red-900">{user.name}</span> */}
       {isLogin ? (
         <button className="bg-slate-600 h-9 w-24 my-6 pr-4" onClick={() => setIsLogin(false)}> Log out</button>
       ) : (

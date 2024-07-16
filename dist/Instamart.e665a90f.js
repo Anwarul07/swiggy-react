@@ -615,7 +615,53 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Instamart", ()=>Instamart);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+const Section = ({ title, description, isVisible, setIsVisible })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "border border-black p-2 m-2",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                className: "font-bold text-xl",
+                children: title
+            }, void 0, false, {
+                fileName: "src/Instamart.jsx",
+                lineNumber: 9,
+                columnNumber: 7
+            }, undefined),
+            isVisible ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: ()=>setIsVisible(false),
+                className: "cursor-pointer underline",
+                children: "Hide"
+            }, void 0, false, {
+                fileName: "src/Instamart.jsx",
+                lineNumber: 10,
+                columnNumber: 20
+            }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: ()=>setIsVisible(true),
+                className: "cursor-pointer underline",
+                children: "Show"
+            }, void 0, false, {
+                fileName: "src/Instamart.jsx",
+                lineNumber: 12,
+                columnNumber: 21
+            }, undefined),
+            isVisible && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: description
+            }, void 0, false, {
+                fileName: "src/Instamart.jsx",
+                lineNumber: 16,
+                columnNumber: 21
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Instamart.jsx",
+        lineNumber: 8,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Section;
 const Instamart = ()=>{
+    // const [visibleSection, setIsVisibleSection] = useState("team");
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "h-80 bg-green-300 text-center my-12 py-8 capitalize",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -625,38 +671,39 @@ const Instamart = ()=>{
                     children: "Instamart Page"
                 }, void 0, false, {
                     fileName: "src/Instamart.jsx",
-                    lineNumber: 4,
-                    columnNumber: 13
+                    lineNumber: 23,
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                     className: " ml-12",
                     children: "100s of components"
                 }, void 0, false, {
                     fileName: "src/Instamart.jsx",
-                    lineNumber: 5,
-                    columnNumber: 13
+                    lineNumber: 24,
+                    columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/Instamart.jsx",
-            lineNumber: 3,
-            columnNumber: 13
+            lineNumber: 22,
+            columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/Instamart.jsx",
-        lineNumber: 2,
+        lineNumber: 21,
         columnNumber: 10
     }, undefined);
 };
-_c = Instamart;
-var _c;
-$RefreshReg$(_c, "Instamart");
+_c1 = Instamart;
+var _c, _c1;
+$RefreshReg$(_c, "Section");
+$RefreshReg$(_c1, "Instamart");
 
   $parcel$ReactRefreshHelpers$9250.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["hhtcG","1xC6H"], null, "parcelRequire60c9")
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}]},["hhtcG","1xC6H"], null, "parcelRequire60c9")
 
 //# sourceMappingURL=Instamart.e665a90f.js.map
