@@ -17,7 +17,7 @@ import "./Food.css";
 import { ProfileClass } from "./ProfileClass";
 import { Provider } from "react-router-dom";
 import { useState } from "react";
-import UserContext from "./userContext";
+import UserContext from "./utilty.jsx/userContext";
 
 
 // import { Instamart } from "./Instamart";
