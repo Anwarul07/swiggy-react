@@ -9,13 +9,16 @@ import { Link } from "react-router-dom";
 import { filerData } from "./utilty.jsx/helper";
 import { FoodFire_Url } from "./Api";
 import { useOnline } from "./utilty.jsx/useOnline";
+import useContext from "react";
+import UserContext from "./utilty.jsx/userContext";
 
 //Use satate is used to create  local varible
 export const Body = () => {
-  
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState();
+
+  // const { user, setUser } = useContext(UserContext);
 
   useEffect(() => {
     gettingApi();
@@ -66,6 +69,27 @@ export const Body = () => {
         >
           Search
         </button>
+
+        {/* <input
+          value={user.name}
+          onChange={(e) =>
+            setUser({
+              ...user,
+              name: e.target.value,
+            })
+          }
+        >
+
+        </input>
+        <input
+          value={user.email}
+          onChange={(e) =>
+            setUser({
+              ...user,
+              email: e.target.value,
+            })
+          } >
+        </input> */}
       </div>
 
       <div className="cart flex flex-wrap justify-center my-8">
