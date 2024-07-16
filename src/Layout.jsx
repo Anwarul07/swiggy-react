@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { Header } from "./Header";
 import { Body } from "./Body";
@@ -29,13 +29,15 @@ const Instamart = lazy(() => import("./Instamart"));
 //Upon on demand loading ->upon render->react will suspend the loading
 
 const Layout = () => {
+  //
+
   return (
-    <>
+    <div>
       <Shimmer />
       <Header />
       <Outlet />
       <Footer />
-    </>
+    </div>
   );
 };
 
