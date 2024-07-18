@@ -13,7 +13,7 @@ import useContext from "react";
 import UserContext from "./utilty.jsx/userContext";
 
 //Use satate is used to create  local varible
-export const Body = () => {
+export const Body = ({user}) => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState();
@@ -99,7 +99,7 @@ export const Body = () => {
               to={"/restaurant/" + restaurant.info.id}
               key={restaurant.info.id}
             >
-              <RestaurantCard {...restaurant.info} />
+              <RestaurantCard {...restaurant.info}   user={user} />
             </Link>
           );
         })}

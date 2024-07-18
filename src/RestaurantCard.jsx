@@ -4,12 +4,14 @@ import { restaurantList } from "./Api";
 import { useContext } from "react";
 import UserContext from "./utilty.jsx/userContext";
 
+
 export const RestaurantCard = ({
   cloudinaryImageId,
   name,
   costForTwo,
   avgRating,
   areaName,
+  user,
 }) => {
 
   // const { user } = useContext(UserContext);
@@ -23,9 +25,9 @@ export const RestaurantCard = ({
         <h4 className="px-2 font-bold">{avgRating} Star</h4>
         <h4 className=" px-2 mb-2 ">{areaName}</h4>
 
-        {/* <h5 className="font-bold">
-          {user.name} - {user.email}
-        </h5> */}
+        <h5 className="font-bold">
+          {/* {user.name} - {user.email}   props using to show herachy level */}
+        </h5>
       </>
     </div>
   );

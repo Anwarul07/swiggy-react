@@ -15,12 +15,12 @@ import { Shimmer } from "./Shimmer";
 import { About } from "./About";
 import "./Food.css";
 import { ProfileClass } from "./ProfileClass";
-import { Provider } from "react-router-dom";
+import { Provider } from "react-redux";
 import { useState } from "react";
 import UserContext from "./utilty.jsx/userContext";
+import store from "./utilty.jsx/Store";
 
-
-// import { Instamart } from "./Instamart";
+import { Instamart } from "./Instamart";
 
 //Chunking
 //Code Splitting
@@ -29,32 +29,30 @@ import UserContext from "./utilty.jsx/userContext";
 //On demand load
 //Dynamic Bundling
 
-const Instamart = lazy(() => import("./Instamart"));
+// const Instamart = lazy(() => import("./Instamart"));
 
 //Upon on demand loading ->upon render->react will suspend the loading
 
 const Layout = () => {
-
-  const [user, setUser] = useState({
-    name: "Anwarul Haue",
-    email: "support@namastereact.com",
-  });
+  // const [user, setUser] = useState({
+  //   name: "Anwarul Haue",
+  //   email: "support@namastereact.com",
+  // });
   return (
-
-    // <Provider store={store}>
-    //   <UserContext.Provider
-    //     value={{
-    //       user: user,
-    //       setUser: setUser,
-    //     }}
-    //   >
-
-    //   </UserContext.Provider>
     <>
+      {/* <Provider store={store}>
+        <UserContext.Provider
+          value={{
+            user: user,
+            setUser: setUser,
+          }}
+        > */}
       <Shimmer />
       <Header />
       <Outlet />
       <Footer />
+      {/* </UserContext.Provider>
+      </Provider> */}
     </>
   );
 };
@@ -67,7 +65,10 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body />,
+        element: <Body user={{
+          name: "Anwarul Haue",
+           email: "support@namastereact.com",
+        }} />,
       },
       {
         path: "/about",
@@ -101,11 +102,10 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/instamart",
-        element: (
-          <Suspense>
-            <Instamart />
-          </Suspense>
-        ),
+        element: <Instamart />
+        // <Suspense fallback={<Shimmer/>}> <Instamart/></Suspense>
+        
+      
       },
     ],
   },
