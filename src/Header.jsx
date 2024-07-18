@@ -4,6 +4,9 @@ import { useState } from "react";
 import Logo from "./assets/logg.png";
 import { Link } from "react-router-dom";
 import "./Food.css";
+import UserContext from "./utilty.jsx/userContext";
+import { useContext } from "react";
+
 
 const logggedin = () => {
   //API  Call;
@@ -40,7 +43,7 @@ export const Header = () => {
           </Link>
         </ul>
       </div>
-      {/* <span className="p-10 font-bold text-red-900">{user.name}</span> */}
+      {/* <span className="p-10 font-bold text-red-900">{user.name}- {user.email}</span> */}
       {isLogin ? (
         <button className="bg-slate-600 h-9 w-24 my-6 pr-4" onClick={() => setIsLogin(false)}> Log out</button>
       ) : (

@@ -40,19 +40,19 @@ const Layout = () => {
   // });
   return (
     <>
-      {/* <Provider store={store}>
-        <UserContext.Provider
+       {/* <Provider store={store}> */}
+        {/* <UserContext.Provider
           value={{
             user: user,
             setUser: setUser,
           }}
-        > */}
+        >  */}
       <Shimmer />
       <Header />
       <Outlet />
       <Footer />
-      {/* </UserContext.Provider>
-      </Provider> */}
+      {/* </UserContext.Provider> */}
+      {/* </Provider> */}
     </>
   );
 };

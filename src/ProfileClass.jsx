@@ -1,4 +1,5 @@
 import React from "react";
+import UserContext from "./utilty.jsx/userContext";
 
 export class ProfileClass extends React.Component {
   constructor(props) {
@@ -75,6 +76,11 @@ export class ProfileClass extends React.Component {
         {/* <img src={this.state.userInfo.avatar_url} />
         <h2>Name: {this.state.userInfo.name}</h2>
         <h2>Location: {this.state.userInfo.location}</h2> */}
+
+
+        {/* <UserContext.Consumer>
+          {({user})=> <h4>{user.name}- {user.email}</h4>}
+        </UserContext.Consumer>  */}
       </div>
     );
   }
