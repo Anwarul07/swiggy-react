@@ -5,6 +5,11 @@ import { RestaurantMenuLink } from "./Api";
 import { FoodFire_Url } from "./Api";
 import { useRestaurant } from "./utilty.jsx/useRestaurant";
 import { Cloudimg } from "./Api";
+import { addItem } from "./utilty.jsx/cartSlice";
+import { removeItem } from "./utilty.jsx/cartSlice";
+import { clearCart } from "./utilty.jsx/cartSlice";
+import react from "react";
+import { useDispatch } from "react-redux";
 
 export const RestaurantsMennu = () => {
   const [restaurants, setRestaurants] = useState([]);
@@ -14,6 +19,18 @@ export const RestaurantsMennu = () => {
 
   // const [restaurantOpen] = useRestaurant(id);
   // console.log(restaurantOpen);
+
+   const dispatch= useDispatch()
+  const handleAddItem= ()=>{
+    dispatch(addItem("Afzal"))
+  }
+
+  const handleRemoveItem= ()=>{
+    dispatch(removeItem())
+  }
+  const handleClearItem= ()=>{
+    dispatch(clearCart())
+  }
 
   useEffect(() => {
     gettingApi();
@@ -50,6 +67,15 @@ export const RestaurantsMennu = () => {
         <h3 className="px-4  font-normal">{data?.sla?.slaString}</h3>
 
         <h3 className="px-4">Restaurants Id : {id}</h3>
+
+        
+      </div>
+      <div>
+        <button className="bg-green-400 border-solid px-2 mx-2 shadow-2xl shadow-slate-500 drop-shadow-2xl text-center border-2 border-gray-900"  onClick={()=> handleAddItem()}>Add Items</button>
+        <button className="bg-green-400 border-solid px-2 mx-2 shadow-2xl shadow-slate-500 drop-shadow-2xl text-center border-2 border-gray-900"  onClick={()=> handleRemoveItem()}>Remove Items</button>
+
+        {/* <button className="bg-green-400 border-solid px-2 mx-2 shadow-2xl shadow-slate-500 drop-shadow-2xl text-center border-2 border-gray-900"  onClick={()=> handleClearItem()}>Clear All Items Items</button> */}
+
       </div>
       <div>
         <h1 className="px-4">Menu</h1>
