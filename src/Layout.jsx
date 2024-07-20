@@ -40,7 +40,7 @@ const Layout = () => {
   // });
   return (
     <>
-       {/* <Provider store={store}> */}
+       <Provider store={store}>
         {/* <UserContext.Provider
           value={{
             user: user,
@@ -52,7 +52,7 @@ const Layout = () => {
       <Outlet />
       <Footer />
       {/* </UserContext.Provider> */}
-      {/* </Provider> */}
+      </Provider>
     </>
   );
 };

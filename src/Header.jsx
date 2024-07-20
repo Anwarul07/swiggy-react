@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import "./Food.css";
 import UserContext from "./utilty.jsx/userContext";
 import { useContext } from "react";
+import { useSelector } from "react-redux";
+import store from "./utilty.jsx/Store";
 
 
 const logggedin = () => {
@@ -21,7 +23,9 @@ export const Title = () => (
 
 export const Header = () => {
   const [isLogin, setIsLogin] = useState(false);
-  // const { user } = useContext(UserContext);
+  const { user } = useContext(UserContext);
+  const cartItems = useSelector(store => store.cart.items);
+  console.log(cartItems);
   
 
   return (
@@ -41,6 +45,9 @@ export const Header = () => {
           <Link to="/instamart">
             <li>Instamart</li>
           </Link>
+          
+            <li>cart {cartItems.length} items</li>
+        
         </ul>
       </div>
       {/* <span className="p-10 font-bold text-red-900">{user.name}- {user.email}</span> */}

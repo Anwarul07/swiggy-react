@@ -13,7 +13,7 @@ export default store;
  * Create Store
  *  - configureStore() - RTK
  *
- * Provide my stor to app
+ * Provide my store to app
  *  - <Provider store = {store}> - import from react-redux
  *
  * Slice
