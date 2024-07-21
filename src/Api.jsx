@@ -6,8 +6,8 @@ export const Cloudimg="https://media-assets.swiggy.com/swiggy/image/upload/fl_lo
 
 
 
-export const RestaurantMenuLink =
-  "https://foodfire.onrender.com/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&&submitAction=ENTER&restaurantId=";
+// export const RestaurantMenuLink =
+//   "https://foodfire.onrender.com/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&&submitAction=ENTER&restaurantId=";
 
 
 export const FoodFire_Url =
