@@ -1,4 +1,4 @@
-import { HederComponent } from "./Header";
+import { Header } from "./Header";
 
 export const Shimmer = () => {
   return (

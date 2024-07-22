@@ -15,13 +15,13 @@ const logggedin = () => {
   return false;
 };
 
-export const Title = () => (
+ const Title = () => (
   <a href="/">
     <img className="logo h-14 my-2 rounded-full" id="logo" src={Logo} />
   </a>
 );
 
-export const Header = () => {
+ const Header = () => {
   const [isLogin, setIsLogin] = useState(false);
   const { user } = useContext(UserContext);
   const cartItems = useSelector(store => store.cart.items);
@@ -59,3 +59,4 @@ export const Header = () => {
     </div>
   );
 };
+export default Header;
